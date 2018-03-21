@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>계산기</title>
+    <style>
+        input {
+            text-align: right;
+            width: 30%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid red;
+            border-radius: 4px;
+        }
+        button {
+            padding: 7px 14px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        button:hover {
+            background-color: #3e8e41
+        }
+        button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="number" name="" id="input1">
+        <br>
+        <input type="number" name="" id="input2">
+        <br>
+        <button id="sumBtn">&plus;</button>
+        <button id="subBtn">&minus;</button>
+        <button id="multiBtn">&times;</button>
+        <button id="divBtn">&divide;</button>
+        <button id="modBtn">mod</button>
+        <p>계산 결과는
+            <span id="result"></span>입니다.</p>
+    </div>
+    <script>
+    //더하기
+    function plus(){
+        var value1 =
+            document.getElementById("input1").value;
+        var value2 =
+            document.getElementById("input2").value;
+        var valueNumber1 = Number(value1);
+        var valueNumber2 = Number(value2);
+        document.getElementById("result").innerHTML = valueNumber1 + valueNumber2;
+    }
+    //빼기
+    function subtract(){
+        var value1 = 
+            document.getElementById("input1").value;
+        var value2 = 
+            document.getElementById("input2").value;
+        document.getElementById("result").innerHTML = value1 - value2;
+    }
+    //곱하기
+     function multi(){
+        var value1 =
+            document.getElementById("input1").value;
+        var value2 =
+            document.getElementById("input2").value;
+        document.getElementById("result").innerHTML = value1 * value2;
+    }
+    //나누기
+     function divide_number(){
+        var value1 =
+            document.getElementById("input1").value;
+        var value2 =
+            document.getElementById("input2").value;
+        document.getElementById("result").innerHTML = value1 / value2;
+    }
+    //모드
+    function mod_number(){
+        var value1 =
+            document.getElementById("input1").value;
+        var value2 =
+            document.getElementById("input2").value;
+        document.getElementById("result").innerHTML = value1 % value2;
+    }
+
+
+    document.getElementById("sumBtn").onclick = plus;
+    document.getElementById("subBtn").onclick = subtract;
+    document.getElementById("multiBtn").onclick = multi;
+    document.getElementById("divBtn").onclick = divide_number;
+    document.getElementById("modBtn").onclick = mod_number;
+
+    </script>
+</body>
+
+</html>

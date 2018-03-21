@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first HTML</title>
+    <meta charset="UTF-8">
+
+</head>
+<style>
+    table,
+    th,
+    td {
+        text-align: center;
+        border: 1px solid #ff0000;
+        border-collapse: collapse;
+        margin: auto;
+        padding: 15px;
+        border-spacing: 5px;
+        /* width:100%; */
+    }
+
+    ul {
+        text-align: left;
+        /* margin: auto; */
+        /* style="list-style-type:none;" */
+    }
+
+    ol {
+        text-align: left;
+    }
+
+    body {
+        background: white;
+        /* text-align: center; */
+    }
+
+    h1 {
+        color: red;
+    }
+
+    .p1 {
+        color: gold;
+        border: 10px solid white;
+        margin: 50px;
+    }
+
+    #p01 {
+        color: navy;
+    }
+
+    a:link {
+        color: green;
+        background: transparent;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: pink;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: yellow;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+    <!--주석입니다.-->
+
+    <h1>
+        <b>Supreme</b>
+    </h1>
+    <p id="p01">첫번째 문단입니다</p>
+    <p class="p1">두번째 문단입니다</p>
+    <a href="http://www.naver.com">
+        <img src="supreme.png" alt="Supreme Logo">
+        <br>
+    </a>
+    <br>
+    <br>
+    <a href="http://www.daum.net" style="font-size:30px";>
+        Daum으로 가보자
+    </a>
+    <br>
+    <a href="index.html" style="font-size:30px";>
+        다른 페이지로 가보자
+    </a>
+    <br>
+    <br>
+    <img src="tenor.gif" alt="panda">
+    <img src="">
+    <p class="p2">HELLO</p>
+    <p class="p2">HELLO</p> 
+    <p class="p2">HELLO</p>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>rank</th>
+        </tr>
+        <tr>
+            <td>Jee</td>
+            <td>27</td>
+            <td>1</td>
+        </tr>
+
+    </table>
+    <ul style="list-style-type:square;">
+        <li>coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <ol type="I">
+        <li>Cofee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ol>
+    <dt>Coffee</dt>
+    <dd>-black</dd>
+    <dd>-americano</dd>
+    <dd>-cold brew</dd>
+    <dt>Milk</dt>
+    <dd>-cold or hot</dd>
+
+
+    <!-- Nested HTML List -->
+    <ul>
+        <li>Cofee</li>
+        <ul style="list-style-type:square;">
+            <li>americano</li>
+            <li>cold-brew</li>
+        </ul>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+</body>
+
+</html>

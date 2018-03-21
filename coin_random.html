@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+    <title>동전 던지기</title>
+</head>
+
+<body>
+    <button id="play" name="">던지기!</button>
+    <p id="demo"><img src = 동전앞.jpg></p>
+    <script>
+        function coin_throw() {
+            var coin_number;
+            coin_number = (Math.random() < 0.5) ? "<img src = 동전앞.jpg>" : "<img src = 동전뒤.jpg>";
+
+            document.getElementById("demo").innerHTML = coin_number;
+        }
+
+        
+        document.getElementById("play").onclick = coin_throw;
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+    <title>등급 계산기</title>
+</head>
+
+<body>
+    <!-- 90~100 A
+    80~90 B
+    70~60 C 
+    60~70 D
+    F -->
+    <input id="input1" type="number">
+    <button id="cal" onclick="grade_cal();">계산하기</button>
+    <p id="display">등급을 입력해주세요.</p>
+    <script>
+        function grade_cal() {
+            var grade_score = document.getElementById("input1").value;
+            if (grade_score >= 90 && grade_score <=100) {
+                document.getElementById("display").innerHTML = "A등급";
+            } else if(grade_score>=80 && grade_score<90){
+                document.getElementById("display").innerHTML = "B등급";
+            } else if(grade_score>=70 && grade_score<80){
+                document.getElementById("display").innerHTML = "C등급";
+            }else if(grade_score>=60 && grade_score<70){
+                document.getElementById("display").innerHTML = "D등급";
+            }else if(grade_score < 60 && grade_score >=0){
+                document.getElementById("display").innerHTML = "F등급";
+            }else{
+                document.getElementById("display").innerHTML = "0~100 사이의 값을 입력해주세요!";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

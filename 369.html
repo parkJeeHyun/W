@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var i = "";
+for (i = 1; i < 100; i++) {
+	if(i%10 == 3){
+    	document.getElementById("demo").innerHTML += "짝" + "<br>";
+    }
+    else if(i%10 == 6){
+    	document.getElementById("demo").innerHTML += "짝" + "<br>";
+    }
+    else if(i%10 == 9){
+    	document.getElementById("demo").innerHTML += "짝" + "<br>";
+    }
+    else{
+    	document.getElementById("demo").innerHTML += i + "<br>";
+    }
+}
+//3 6 9 13 16 19
+</script>
+
+
+</body>
+</html>

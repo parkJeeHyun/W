@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="showAJAX();">더보기</button>
+    <ul id="result"></ul>
+    <script>
+        var xhr = new XMLHttpRequest();
+        function showAJAX() {
+
+            xhr.onreadystatechange = function () {
+                //console.log(xhr.readyState);
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    //console.log(xhr.responseText);
+                    var datas = JSON.parse(xhr.responseText);
+                    //console.log(datas[0].fname);
+                    for (var i = 0; i < datas.length; i++) { 
+                    document.getElementById("result").innerHTML +=
+                        "<li>" + datas[0].fname + ", " + datas[0].lname + ", " + datas[0].age +"</li>";
+                    }
+                }
+            }
+
+
+
+            xhr.open("get", "http://www.filltext.com/?rows=2&fname={firstName}&lname={lastName}&age={number}");
+            xhr.send();
+        }
+
+    </script>
+</body>
+
+</html>

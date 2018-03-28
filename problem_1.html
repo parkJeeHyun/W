@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+    <style>
+        input {
+            text-align: right;
+            width: 30%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid greenyellow;
+            border-radius: 4px;
+        }
+        button {
+            padding: 7px 14px;
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        button:hover {
+            background-color: #3e8e41
+        }
+        button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        p, div{
+            font-size: 25px;
+            color : green;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script>
+        //First Problem
+        function NumberComparison_Bigger() {
+            var value1 = "";
+            var value2 = "";
+
+            value1 = document.getElementById("input1").value;
+            value2 = document.getElementById("input2").value;
+
+            if (value1 > value2) {
+                document.getElementById("result_first").innerHTML = value1;
+            } else if (value2 > value1) {
+                document.getElementById("result_first").innerHTML = value2;
+            } else {
+                document.getElementById("result_first").innerHTML = "같거나 측정 불가";
+            }
+        }
+
+        function NumberComparison_Smaller() {
+            var value1 = "";
+            var value2 = "";
+
+            value1 = document.getElementById("input1").value;
+            value2 = document.getElementById("input2").value;
+
+            if (value1 < value2) {
+                document.getElementById("result_first").innerHTML = value1;
+            } else if (value2 < value1) {
+                document.getElementById("result_first").innerHTML = value2;
+            } else {
+                document.getElementById("result_first").innerHTML = "같거나 측정 불가";
+            }
+        }
+
+
+        //Second Problem
+        function Text_Search() {
+            var text1 = document.getElementById("input2_1").value;
+            var text2 = document.getElementById("input2_2").value;
+            var Search = text1.search(text2);
+
+            document.getElementById("result_second").innerHTML = Search;
+        }
+
+
+        //Third Problem
+        function RandomNumberMaker() {
+            value1 = Number(document.getElementById("input3_1").value);
+            value2 = Number(document.getElementById("input3_2").value);
+
+            var randomNumber = Math.floor(Math.random() * (value2 - value1) + value1);
+
+            document.getElementById("result_third").innerHTML = randomNumber;
+        }
+
+
+        //Fourth Problem
+        function StarMaker() {
+            var LineNumber = document.getElementById("input4").value;
+            var StarSave = "";
+            var i = "";
+            var j = "";
+            for (i = 0; i <= LineNumber; i++) {
+                for (j = 0; j < i; j++) {
+                    StarSave += "*";
+                }
+                StarSave += "<br>";
+            }
+            document.getElementById("result4").innerHTML = StarSave;
+        }
+
+        //Fifth Problem
+        function Gugudan() {
+            var number = document.getElementById("input5").value;
+            var i = "";
+            var j = "";
+            var SaveHere = "";
+            for (i = number; i <= number; i++) {
+                for (j = 1; j < 10; j++) {
+                    SaveHere += i + "*" + j + "=" + i * j + "<br>";
+                }
+            }
+            document.getElementById("result5").innerHTML = SaveHere;
+        }
+
+        //Sixth Problem
+        function GugudanAll() {
+            var i = "";
+            var j = "";
+            var SaveHere = "";
+            for (i = 1; i < 10; i++) {
+                for (j = 1; j < 10; j++) {
+                    SaveHere += i + "*" + j + "=" + i * j + "<br>";
+                }
+                SaveHere += "<br>"
+            }
+            document.getElementById("result6").innerHTML = SaveHere;
+        }
+
+
+        //Seventh Problem
+        function GugudanEven() {
+            var SaveHere = "";
+            for (var i = 2; i < 10; i = i + 2) {
+                for (var j = 1; j < 10; j++) {
+                    SaveHere += i + "*" + j + "=" + i * j + "<br>";
+                }
+                SaveHere += "<br>"
+            }
+            document.getElementById("result7").innerHTML = SaveHere;
+        }
+            var number = Math.floor(Math.random() * (101 - 1) + 1);
+        //Eight Problem
+        function RandomGame() {
+            //var number = Math.floor(Math.random() * (101 - 1) + 1);
+            var UserNumber = document.getElementById("input8").value;
+            var i = 0;
+            var text = "";
+            do {
+                i++;
+                
+                if (number == UserNumber) {
+                    document.getElementById("result8").innerHTML = "correct!";
+                } else if (number > UserNumber) {
+                    document.getElementById("result8").innerHTML = "too small!";
+                } else if (number < UserNumber) {
+                    document.getElementById("result8").innerHTML = "too big!";
+                }
+            }while(i<5);
+        }
+    </script>
+    <!-- First Problem -->
+    <p>First Problem</p>
+    <input id="input1" name="">
+    <input id="input2" name="">
+    <button id="Btn1" name="" onclick="NumberComparison_Bigger()">First Btn</button>
+    <button id="Btn2" name="" onclick="NumberComparison_Smaller()">Second Btn</button>
+    <p id="result_first"></p>
+    <br>
+    <br>
+    <br>
+
+    <!-- Second Problem -->
+    <p>Second Problem</p>
+    <input id="input2_1" name="" type="text">
+    <input id="input2_2" name="" type="text">
+    <button id="Btn2_1" onclick="Text_Search()">Button</button>
+    <p id="result_second"></p>
+    <br>
+    <br>
+    <br>
+
+    <!-- Third Problem -->
+    <p>Third Problem</p>
+    <input id="input3_1" type="number">
+    <input id="input3_2" type="number">
+    <button id="Btm3" onclick="RandomNumberMaker()">Button</button>
+    <p id="result_third"></p>
+    <br>
+    <br>
+    <br>
+
+    <!-- Fourth Problem -->
+    <p>Fourth Problem</p>
+    <input id="input4" type="number">
+    <button id="Btn4" onclick="StarMaker()">별 만들어버리기</button>
+    <p id="result4"></p>
+    <br>
+    <br>
+    <br>
+
+    <!-- Fifth Problem -->
+    <div>
+        <p>Fifth Problem</p>
+        <input id="input5" type="number">
+        <button id="Btn5" onclick="Gugudan()">구구단</button>
+    </div>
+    <div id="result5"></div>
+    <br>
+    <br>
+    <br>
+
+
+    <!-- sixth Problem -->
+    <div>
+        <p>Sixth Problem</p>
+        <button id="Btn6" onclick="GugudanAll()">구구단</button>
+    </div>
+    <div id="result6"></div>
+    <br>
+    <br>
+    <br>
+
+    <!-- Seventh Problem -->
+    <button onclick="GugudanEven()">구구단 짝수</button>
+    <div id="result7"></div>
+    <br>
+    <br>
+    <br>
+
+    <!-- Eighth Problem -->
+    <input id="input8">
+    <button id="Btn8" onclick="RandomGame()">랜덤 게임</button>
+    <div id="result8"></div>
+    <br>
+    <br>
+    <br>
+</body>
+
+</html>

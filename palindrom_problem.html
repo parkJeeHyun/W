@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+    $(function () {
+      function checkPalindrom(text) {
+        var isPalindrom = false;
+        var str = "";
+        var letterOnly = /[^(a-zA-Z)]/gi;
+        // your code...
+        if( text ){
+        str = text.replace(letterOnly,"").toLowerCase();
+        // str = text.toString().replace("","").toLocaleLowerCase();
+        // str = text.toString().replace(" ","").toLocaleLowerCase();
+        // str = text.toString().replace(" ","").toLocaleLowerCase();
+
+     //if( str.length>1 ){
+            for(var i=0; i<str.length/2; i++){
+                if( str.charAt(i)!=str.charAt((str.length-1)-i) ){
+                    return false;
+                }
+            }
+            return true
+       // }
+    }
+        return isPalindrom;
+      }
+      $("p").each(function (i, elem) {
+         console.log($(elem).text());
+        $("#result").append(checkPalindrom($(elem).text()) + "<br>");
+      });
+    }); 
+  </script>
+
+  <title>Document</title>
+
+</head>
+
+<body>
+  <p>Taco Cat</p>
+  <p>No garden, one dragon.</p>
+  <p>Darn ocelots stole Conrad!</p>
+  <p>Stressed was I ere I saw desserts.</p>
+  <p>In girum imus nocte, et consumimur igni.</p>
+  <div id="result"></div>
+
+</body>
+
+</html>
